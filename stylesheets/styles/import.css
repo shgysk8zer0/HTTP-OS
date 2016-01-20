@@ -1,0 +1,94 @@
+@charset 'UTF-8';
+@import url(../core-css/viewport.css);
+@import url(../normalize/normalize.css);
+@import url(viewport.css);
+@import url(../core-css/fonts.css);
+@import url(../core-css/animations.css) screen;
+@import url(../core-css/details.css);
+@import url(../core-css/dialog.css);
+@import url(../core-css/progress.css);
+@import url(../core-css/class_rules.css);
+@import url(../core-css/links.css);
+@import url(../core-css/misc.css);
+@import url(../core-css/data-filter.css);
+:root {
+	/*================= Set color vars here =================*/
+	--default-color: rgb(252, 252, 252);
+	--alt-color: rgb(41, 41, 41);
+	--primary-color: rgb(237, 24, 24);
+	--highlight-color: rgb(129, 23, 23);
+	--link-color: hsl(209, 62%, 45%);
+	--visited-color: #551A8B;
+	--border-color: rgb(45, 45, 45);
+	/*========== Set background images, etc here ==========*/
+	--main-bg: linear-gradient(gainsboro, lightgray, gainsboro);
+	--glass-grad: linear-gradient(to top left, rgba(80, 80, 80, 0.7), rgba(140, 140, 140, 0.9), rgba(40, 40, 40, 0.7));
+	--shadow: rgba(20, 20, 20, 0.9);
+	--tint-glass: linear-gradient(rgba(40, 40, 40, 0.8), rgba(80, 80, 80, 0.7));
+	--header-bg: linear-gradient(rgba(40, 40, 40, 1), rgba(80, 80, 80, 0.97));
+	--progress-grad: linear-gradient(var(--highlight-color), var(--primary-color), var(--highlight-color));
+	/*==================== Set fonts here ====================*/
+	--header-font: 'PressStart';
+	--article-font: 'Ubuntu';
+	--article-header-font: var(--header-font);
+	--icon-font: 'Web Symbols';
+	/*================ Set various icons here ================*/
+	--link-icon: '  K';
+	--tag-icon: '  , ';
+	--new-tab-icon: '  D';
+	--download-icon: '  A';
+	--next-icon: ')';
+	--prev-icon: '(';
+	--unchecked-icon: '  \\';
+	--checked-icon: '  .';
+	--dropdown-open-icon: '[ ';
+	--dropdown-closed-icon: '] ';
+	--close-icon: '\'';
+	--search-icon: 'L';
+	--attachmnent-icon: 'A';
+	--fullscreen-icon: '%';
+	/*================== Set cursors here ==================*/
+	--default-cursor: auto;
+	--pointer: pointer;
+	/*============= Various sizes and positions =============*/
+	--main-width: 90%;
+	--article-width: 67%;
+	--sidebar-width: calc(97% - var(--article-width));
+	--article-position: 2;
+	--sidebar-position: 1;
+	/*This is the max z-index value. Others can use calc(var(--z-max) - n)*/
+	--z-max: 100;
+}
+:root::before {
+	content: '';
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	z-index: -1;
+	background-image: var(--main-bg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	will-change: transform;
+	transition: background-color 3s;
+}
+:root {
+	color: var(--default-color);
+	text-shadow: var(--shadow);
+	cursor: var(--default-cursor);
+}
+@supports(background-blend-mode: initial) {
+	:root.CSSsupports::before {
+		background-color: var(--primary-color);
+		background-blend-mode: multiply;
+	}
+}
+@supports((display: flex) or (display: -webkit-flex) or (display: -ms-flex)) {
+	body {
+		justify-content: center;
+		text-rendering: optimizeSpeed;
+		scroll-behavior: smooth;
+	}
+}
