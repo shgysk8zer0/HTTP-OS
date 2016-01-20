@@ -25,6 +25,6 @@
 [submodule "fonts"]
 	path = fonts
 	url = git://github.com/shgysk8zer0/fonts.git
-[submodule "stylesheets/--reference"]
-	path = stylesheets/--reference
+[submodule "stylesheets/normalize"]
+	path = stylesheets/normalize
 	url = git://github.com/necolas/normalize.css.git
